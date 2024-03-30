@@ -1,9 +1,23 @@
 """Latihan Project Python"""
 
 import os
+import crud
 
 if __name__ == "__main__":
     SISTEM_OPERASI = os.name
+
+    match SISTEM_OPERASI:
+        case "posix":
+            os.system("clear")
+        case "nt":
+            os.system("cls")
+
+    print("SELAMAT DATANG DI PROGRAM")
+    print("DI DATABASE PERPUSTAKAAN")
+    print("=========================")
+
+    # Check database
+    crud.init_console()
 
     while True:
         match SISTEM_OPERASI:
@@ -23,11 +37,9 @@ if __name__ == "__main__":
 
         user_option = input("Masukan opsi: ")
 
-        print("\n========================\n")
-
         match user_option:
             case "1":
-                print("Read Data")
+                crud.read_console()
             case "2":
                 print("Create Data")
             case "3":
@@ -35,7 +47,6 @@ if __name__ == "__main__":
             case "4":
                 print("Delete Data")
 
-        print("\n========================\n")
         is_done = input("Apakah Selesai? (y/n): ")
         if is_done == "y" or is_done == "Y":
             break
