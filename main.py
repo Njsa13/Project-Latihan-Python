@@ -41,11 +41,11 @@ if __name__ == "__main__":
             case "1":
                 crud.read_console()
             case "2":
-                print("Create Data")
+                crud.create_console()
             case "3":
-                print("Update Data")
+                crud.update_console()
             case "4":
-                print("Delete Data")
+                crud.delete_console()
 
         is_done = input("Apakah Selesai? (y/n): ")
         if is_done == "y" or is_done == "Y":

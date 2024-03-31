@@ -1,4 +1,4 @@
-from . import Operasi
+from . import operasi
 
 DB_NAME = "data.txt"
 TEMPLATE = {
@@ -9,10 +9,11 @@ TEMPLATE = {
     "tahun": "yyyy",
 }
 
+
 def init_console():
     try:
         with open(DB_NAME, "r", encoding="utf-8") as _:
             print("Database ditemukan")
     except FileNotFoundError:
         print("Database tidak ditemukan, silahkan buat database baru")
-        Operasi.create_first_data()
+        operasi.create_first_data()
